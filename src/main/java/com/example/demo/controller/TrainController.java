@@ -28,33 +28,6 @@ public class TrainController {
         trainService.trainDeleteAll();
     }
 
-   /** @PostMapping("/saveTrain")
-    public Train saveTrain(@RequestBody Train train){
-        Train newTrain = new Train();
-       newTrain.setTrain_name(train.getTrain_name());
-       newTrain.setTrain_type(train.getTrain_type());
-
-       return trainRepository.save(newTrain);
-    }
-    @PutMapping("/updateTrain")
-    public Train updateTrain(@RequestBody Train train){
-        Optional<Train> updateTrain = trainRepository.findById(train.getId_train());
-        Train newTrain = updateTrain.get();
-        newTrain.setTrain_name(train.getTrain_name());
-
-        return trainRepository.save(newTrain);
-    }
-    @PostMapping("/post")
-    public void createTrain(Train train){
-    trainService.createTrain(train);
-    **/
-   /**
-   @PostMapping("/post")
-    public Train createTrain(@RequestBody Train train){
-        return trainRepository.save(train);
-   }
-   **/
-
    @PostMapping("/post")
    public Train createTrain(@RequestBody Train train){
        return trainService.createTrain(train);
