@@ -36,4 +36,10 @@ public class TrainController {
     public Train updateTrain(@PathVariable Long id,@RequestBody Train train){
        return trainService.updateById(id,train);
    }
+   public Train findById(@RequestBody Long id_train){
+        return trainService.findById(id_train);
+   }
+   public void deleteById(@RequestBody Long id_train){
+        trainRepository.deleteById(id_train);
+   }
 }

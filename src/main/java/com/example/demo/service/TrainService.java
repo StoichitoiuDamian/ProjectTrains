@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.Train;
 import com.example.demo.repository.TrainRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +33,21 @@ public class TrainService {
         long tour_id = train.getId_tour();
 
         return trainRepository.save(train);
+    }
+    public Train findById(Long id_train){
+        Optional<Train> optionalTrain = trainRepository.findById(id_train);
+        if(optionalTrain.isPresent()){
+            return optionalTrain.get();
+        }else {
+            throw new EntityNotFoundException("train with id "+id_train+ "not found");
+        }
+    }
+    public void deleteById(Long id_train){
+        Optional<Train> optionalTrain = trainRepository.findById(id_train);
+        if(optionalTrain.isPresent()){
+            trainRepository.deleteById(id_train);
+        }else {
+            throw new EntityNotFoundException("train with id "+id_train+"not found");
+        }
     }
 }
