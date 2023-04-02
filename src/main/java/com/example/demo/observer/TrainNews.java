@@ -11,6 +11,10 @@ import java.util.List;
 @Service
 public class TrainNews {
 
+    /**
+     * Observer pattern pentru a notifica persoanele abonate
+     * despre trenuri noi care au intrat in circulatie
+     */
 
     private String news;
     private List<NewTrainInformation> newTrainInformations = new ArrayList<>();

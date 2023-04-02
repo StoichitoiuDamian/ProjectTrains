@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Train;
+import com.example.demo.observer.NewTrainInformation;
+import com.example.demo.observer.TrainNews;
 import com.example.demo.repository.TrainRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,10 @@ import java.util.Optional;
 
 @Service
 public class TrainService {
-
+    /**
+     * metodele folosite pentru a realiza Get put post delete
+     *  plus alte end pointuri noi cum ar fi findbyid deletebyid
+     */
     @Autowired
     private TrainRepository trainRepository;
 
@@ -34,6 +39,7 @@ public class TrainService {
 
         return trainRepository.save(train);
     }
+
     public Train findById(Long id_train){
         Optional<Train> optionalTrain = trainRepository.findById(id_train);
         if(optionalTrain.isPresent()){
@@ -50,4 +56,5 @@ public class TrainService {
             throw new EntityNotFoundException("train with id "+id_train+"not found");
         }
     }
+
 }

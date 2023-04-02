@@ -15,6 +15,7 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_person;
 
+
     private String username;
     private String password;
 
@@ -35,7 +36,6 @@ public class Person {
     }
 
 
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -43,7 +43,5 @@ public class Person {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 
 }

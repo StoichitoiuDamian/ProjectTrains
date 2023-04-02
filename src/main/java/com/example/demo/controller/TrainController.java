@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Train;
 import com.example.demo.repository.TrainRepository;
 import com.example.demo.service.TrainService;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,29 +18,43 @@ import java.util.Optional;
 public class TrainController {
     @Autowired
     TrainService trainService;
-    TrainRepository trainRepository;
 
-    @GetMapping("/")
+    @GetMapping("/train")
     public List<Train> getMapping(){
         return trainService.trainFindAll();
     }
-    @DeleteMapping("/delete")
+    @DeleteMapping("/deleteTrain")
     public void deleteTrain(){
         trainService.trainDeleteAll();
     }
 
-   @PostMapping("/post")
+   @PostMapping("/postTrain")
    public Train createTrain(@RequestBody Train train){
        return trainService.createTrain(train);
    }
-   @PutMapping("/put{id}")
+   @PutMapping("/putTrain{id}")
     public Train updateTrain(@PathVariable Long id,@RequestBody Train train){
        return trainService.updateById(id,train);
    }
-   public Train findById(@RequestBody Long id_train){
-        return trainService.findById(id_train);
+   @GetMapping("/findTrain{id}")
+   public Train findById(@PathVariable Long id){
+        Train t1 = new Train();
+
+        try{
+             t1 = trainService.findById(id);
+        }
+        catch (EntityNotFoundException e2){
+            System.out.println("Entity not found");
+        }
+         catch (Exception e){
+             t1 = null;
+             System.out.println("Exception found");
+         }
+
+            return t1;
    }
-   public void deleteById(@RequestBody Long id_train){
-        trainRepository.deleteById(id_train);
+    @DeleteMapping("/deleteTrain{id}")
+   public void deleteById(@PathVariable Long id){
+        trainService.deleteById(id);
    }
 }
