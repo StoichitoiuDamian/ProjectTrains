@@ -11,4 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonController {
     @Autowired
     private PersonService personService;
+
+    public void news(String info){
+        personService.update(info);
+    }
 }

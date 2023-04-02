@@ -9,13 +9,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Person implements NewTrainInformation{
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_person;
-    TrainNews trainNews;
-    private String news;
+
     private String username;
     private String password;
 
@@ -34,10 +33,8 @@ public class Person implements NewTrainInformation{
     public void setId_person(Long id_person) {
         this.id_person = id_person;
     }
-    @Override
-    public void update(String news) {
-        trainNews.setNews(news);
-    }
+
+
 
     public void setUsername(String username) {
         this.username = username;
