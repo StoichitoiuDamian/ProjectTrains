@@ -1,8 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Train;
-import com.example.demo.observer.NewTrainInformation;
-import com.example.demo.observer.TrainNews;
 import com.example.demo.repository.TrainRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +15,20 @@ public class TrainService {
      * metodele folosite pentru a realiza Get put post delete
      *  plus alte end pointuri noi cum ar fi findbyid deletebyid
      */
+
+    private  TrainRepository trainRepository;
+
     @Autowired
-    private TrainRepository trainRepository;
+    public TrainService(TrainRepository trainRepository){
+        this.trainRepository = trainRepository;
+    }
+    public TrainRepository getTrainRepository() {
+        return trainRepository;
+    }
+
+    public void setTrainRepository(TrainRepository trainRepository) {
+        this.trainRepository = trainRepository;
+    }
 
     public List<Train> trainFindAll(){
         return trainRepository.findAll();

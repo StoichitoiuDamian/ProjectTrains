@@ -9,5 +9,7 @@ import java.util.Optional;
 @Repository
 public interface TrainRepository extends JpaRepository<Train,Long> {
     Optional<Train> findById(Long id_train);
+
+   // Train updateById(Long id_train,Train train);
     void deleteById(Long id_train);
 }
