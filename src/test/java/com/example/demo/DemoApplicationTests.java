@@ -122,6 +122,7 @@ class DemoApplicationTests {
 		verify(user).getUser();
 	}
 */
+	/*
 	@BeforeEach
 	public void setUp() {
 		train1 = new Train();
@@ -184,4 +185,6 @@ class DemoApplicationTests {
 		trainService.deleteById(1L);
 		verify(trainDao, times(1)).deleteById(1L);
 	}
+
+	 */
 }

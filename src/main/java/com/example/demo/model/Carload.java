@@ -5,6 +5,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * Această clasă definește un model de date pentru un tip de marfă feroviară numit "Carload". Aceasta are următoarele proprietăți:
+ *
+ * id_carload: un identificator unic pentru această instanță de tip Carload
+ * id_train: id-ul trenului cu care este asociat acest Carload
+ * number_sits: numărul de locuri disponibile în acest Carload
+ * class_type: tipul de clasă pentru locuri (ex. Business, Economy)
+ * De asemenea, clasa conține un constructor cu parametrii necesari pentru a crea un nou obiect Carload și metode de acces și modificare pentru fiecare proprietate.
+ */
 @Entity
 public class Carload {
     @Id

@@ -6,6 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * Această clasă reprezintă un bilet de tren și conține informații despre id-ul biletului, ora, ziua, luna, prețul, id-ul trenului,
+ * tipul de clasă, numărul locului, id-ul turului și id-ul persoanei care a cumpărat biletul.
+ * Clasa are un constructor care primește toate aceste informații și metode pentru a seta și a obține aceste valori.
+ * De asemenea, clasa are adnotări JPA (@Id, @GeneratedValue) pentru a specifica că id-ul biletului trebuie să fie unic și generat automat.
+ */
 @Entity
 public class Ticket {
 

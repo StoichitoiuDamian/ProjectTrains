@@ -10,6 +10,19 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Această clasă este un controller pentru o aplicație web care permite gestionarea de persoane.
+ * Folosește anotarea Spring @Autowired pentru a injecta o instanță a clasei PersonService.
+ * Clasa conține cinci endpoint-uri diferite, toate marcate cu anotări Spring care specifică tipul de cerere HTTP și calea URL. Aceste endpoint-uri permit:
+ *
+ * Obținerea tuturor persoanelor (HTTP GET la /person)
+ * Ștergerea tuturor persoanelor (HTTP DELETE la /deletePerson)
+ * Crearea unei noi persoane (HTTP POST la /postPerson)
+ * Actualizarea unei persoane existente, specificată prin ID (HTTP PUT la /putPerson{id})
+ * Obținerea unor știri, pasând un string cu noutățile (HTTP GET la /getNews)
+ * Ultimul endpoint (/getNews) este cel care diferă de celelalte, întrucât nu lucrează direct cu obiecte de tip Person.
+ * În schimb, apelează o metodă de actualizare în cadrul PersonService pentru a notifica persoanele abonate despre știri noi.
+ */
 @RestController
 @CrossOrigin
 public class PersonController {

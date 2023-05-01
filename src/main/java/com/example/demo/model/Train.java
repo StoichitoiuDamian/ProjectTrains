@@ -5,6 +5,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * Această clasă reprezintă o entitate de tip tren. Are un câmp de identificare id_train generat automat de baza de date. De asemenea,
+ * conține informații despre numele trenului train_name, tipul trenului train_type și identificatorul turului id_tour.
+ * De asemenea, clasa are metode pentru a seta și prelua valorile acestor câmpuri.
+ */
 @Entity
 
 public class Train {

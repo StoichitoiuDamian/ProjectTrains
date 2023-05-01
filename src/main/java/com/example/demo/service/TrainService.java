@@ -12,8 +12,25 @@ import java.util.Optional;
 @Service
 public class TrainService {
     /**
-     * metodele folosite pentru a realiza Get put post delete
-     *  plus alte end pointuri noi cum ar fi findbyid deletebyid
+     Mai precis, această clasă definește următoarele metode pentru manipularea datelor din tabelul Train:
+     trainFindAll():
+     returnează o listă cu toate înregistrările din tabelul Train;
+     trainDeleteAll():
+     șterge toate înregistrările din tabelul Train;
+     createTrain(Train train):
+     adaugă o nouă înregistrare în tabelul Train, utilizând obiectul Train furnizat ca argument;
+     updateById(Long id,Train train):
+     actualizează o înregistrare existentă din tabelul Train cu ID-ul dat,
+     utilizând obiectul Train furnizat ca argument. Această metodă utilizează metoda findById(id) pentru a găsi înregistrarea înainte de a o actualiza;
+     findById(Long id_train):
+     caută o înregistrare din tabelul Train după ID și returnează obiectul
+     Train corespunzător. Dacă nu există nicio înregistrare cu acel ID, se va arunca o excepție EntityNotFoundException;
+     deleteById(Long id_train):
+     șterge o înregistrare din tabelul Train cu ID-ul dat.
+     Această metodă utilizează metoda findById(id) pentru a găsi înregistrarea înainte de a o șterge.
+     Dacă nu există nicio înregistrare cu acel ID, se va arunca o excepție EntityNotFoundException.
+     Această clasă este marcată cu @Service, ceea ce înseamnă că poate fi injectată în alte clase care o folosesc ca dependență.
+     utilizează și o dependență a clasei TrainRepository, care este injectată prin intermediul constructorului.
      */
 
     private  TrainRepository trainRepository;
