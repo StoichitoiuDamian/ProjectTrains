@@ -1,20 +1,14 @@
 package com.example.demo;
 
 import com.example.demo.model.Train;
+import com.example.demo.repository.TrainRepository;
 import com.example.demo.service.TrainService;
 import com.example.demo.trainclassunittests.TrainDao;
-import com.example.demo.trainclassunittests.TrainDaoImpl;
-import com.example.demo.unittests.*;
-import jakarta.persistence.EntityNotFoundException;
-import org.hibernate.sql.ast.tree.expression.CaseSimpleExpression;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -22,7 +16,6 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
@@ -30,9 +23,13 @@ class DemoApplicationTests {
 
 	@Mock
 	private TrainDao trainDao;
+	@Mock
+	private TrainRepository trainRepository;
 
 	@InjectMocks
 	private TrainService trainService;
+
+
 
 	private Train train1;
 	private Train train2;
@@ -122,7 +119,7 @@ class DemoApplicationTests {
 		verify(user).getUser();
 	}
 */
-	/*
+
 	@BeforeEach
 	public void setUp() {
 		train1 = new Train();
@@ -144,7 +141,7 @@ class DemoApplicationTests {
 
 	@Test
 	public void testTrainFindAll() {
-		when(trainDao.findAll()).thenReturn(trainList);
+		when(trainRepository.findAll()).thenReturn(trainList);
 		List<Train> foundTrains = trainService.trainFindAll();
 		assertEquals(2, foundTrains.size());
 		assertEquals(trainList, foundTrains);
@@ -153,27 +150,27 @@ class DemoApplicationTests {
 	@Test
 	public void testTrainDeleteAll() {
 		trainService.trainDeleteAll();
-		verify(trainDao, times(1)).deleteAll();
+		verify(trainRepository, times(1)).deleteAll();
 	}
 
 	@Test
 	public void testCreateTrain() {
-		when(trainDao.save(train1)).thenReturn(train1);
+		when(trainRepository.save(train1)).thenReturn(train1);
 		Train createdTrain = trainService.createTrain(train1);
 		assertEquals(train1, createdTrain);
 	}
 	@Test
 	public void testUpdateById() {
 		Optional<Train> optionalTrain = Optional.of(train1);
-		when(trainDao.findById(1L)).thenReturn(optionalTrain);
-		when(trainDao.save(train1)).thenReturn(train1);
+		when(trainRepository.findById(1L)).thenReturn(optionalTrain);
+		when(trainRepository.save(train1)).thenReturn(train1);
 		Train updatedTrain = trainService.updateById(1L, train1);
 		assertEquals(train1, updatedTrain);
 	}
 	@Test
 	public void testFindById() {
 		Optional<Train> optionalTrain = Optional.of(train1);
-		when(trainDao.findById(1L)).thenReturn(optionalTrain);
+		when(trainRepository.findById(1L)).thenReturn(optionalTrain);
 		Train foundTrain = trainService.findById(1L);
 		assertEquals(train1, foundTrain);
 	}
@@ -181,10 +178,10 @@ class DemoApplicationTests {
 	@Test
 	public void testDeleteById() {
 		Optional<Train> optionalTrain = Optional.of(train1);
-		when(trainDao.findById(1L)).thenReturn(optionalTrain);
+		when(trainRepository.findById(1L)).thenReturn(optionalTrain);
 		trainService.deleteById(1L);
-		verify(trainDao, times(1)).deleteById(1L);
+		verify(trainRepository, times(1)).deleteById(1L);
 	}
 
-	 */
+
 }
