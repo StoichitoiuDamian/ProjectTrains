@@ -23,17 +23,18 @@ public class Tour {
     private String stop;
     private int id_train;
 
-    public Tour(int hour, int day, int month, String start, String stop, int id_train) {
-        this.hour = hour;
-        this.day = day;
-        this.month = month;
-        this.start = start;
-        this.stop = stop;
-        this.id_train = id_train;
-    }
+
 
     public int getHour() {
         return hour;
+    }
+
+    public Long getId_tour() {
+        return id_tour;
+    }
+
+    public void setId_tour(Long id_tour) {
+        this.id_tour = id_tour;
     }
 
     public void setHour(int hour) {

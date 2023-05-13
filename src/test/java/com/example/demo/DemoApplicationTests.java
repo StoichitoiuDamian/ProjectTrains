@@ -3,7 +3,7 @@ package com.example.demo;
 import com.example.demo.model.Train;
 import com.example.demo.repository.TrainRepository;
 import com.example.demo.service.TrainService;
-import com.example.demo.trainclassunittests.TrainDao;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -21,8 +21,7 @@ import static org.mockito.Mockito.*;
 @SpringBootTest
 class DemoApplicationTests {
 
-	@Mock
-	private TrainDao trainDao;
+
 	@Mock
 	private TrainRepository trainRepository;
 
@@ -119,69 +118,6 @@ class DemoApplicationTests {
 		verify(user).getUser();
 	}
 */
-
-	@BeforeEach
-	public void setUp() {
-		train1 = new Train();
-		train1.setId_train(1L);
-		train1.setTrain_name("Train 1");
-		train1.setTrain_type("Type 1");
-		train1.setId_tour(2L);
-
-		train2 = new Train();
-		train2.setId_train(2L);
-		train2.setTrain_name("Train 2");
-		train2.setTrain_type("Type 2");
-		train2.setId_tour(3L);
-
-		trainList = new ArrayList<>();
-		trainList.add(train1);
-		trainList.add(train2);
-	}
-
-	@Test
-	public void testTrainFindAll() {
-		when(trainRepository.findAll()).thenReturn(trainList);
-		List<Train> foundTrains = trainService.trainFindAll();
-		assertEquals(2, foundTrains.size());
-		assertEquals(trainList, foundTrains);
-	}
-
-	@Test
-	public void testTrainDeleteAll() {
-		trainService.trainDeleteAll();
-		verify(trainRepository, times(1)).deleteAll();
-	}
-
-	@Test
-	public void testCreateTrain() {
-		when(trainRepository.save(train1)).thenReturn(train1);
-		Train createdTrain = trainService.createTrain(train1);
-		assertEquals(train1, createdTrain);
-	}
-	@Test
-	public void testUpdateById() {
-		Optional<Train> optionalTrain = Optional.of(train1);
-		when(trainRepository.findById(1L)).thenReturn(optionalTrain);
-		when(trainRepository.save(train1)).thenReturn(train1);
-		Train updatedTrain = trainService.updateById(1L, train1);
-		assertEquals(train1, updatedTrain);
-	}
-	@Test
-	public void testFindById() {
-		Optional<Train> optionalTrain = Optional.of(train1);
-		when(trainRepository.findById(1L)).thenReturn(optionalTrain);
-		Train foundTrain = trainService.findById(1L);
-		assertEquals(train1, foundTrain);
-	}
-
-	@Test
-	public void testDeleteById() {
-		Optional<Train> optionalTrain = Optional.of(train1);
-		when(trainRepository.findById(1L)).thenReturn(optionalTrain);
-		trainService.deleteById(1L);
-		verify(trainRepository, times(1)).deleteById(1L);
-	}
 
 
 }

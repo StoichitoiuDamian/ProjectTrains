@@ -29,17 +29,7 @@ public class Ticket {
     private int id_tour;
     private int id_person;
 
-    public Ticket(int hour, int day, int month, int price, int id_train, String class_type, int sit_number, int id_tour, int id_person) {
-        this.hour = hour;
-        this.day = day;
-        this.month = month;
-        this.price = price;
-        this.id_train = id_train;
-        this.class_type = class_type;
-        this.sit_number = sit_number;
-        this.id_tour = id_tour;
-        this.id_person = id_person;
-    }
+
 
     public Long getId_ticket() {
         return id_ticket;

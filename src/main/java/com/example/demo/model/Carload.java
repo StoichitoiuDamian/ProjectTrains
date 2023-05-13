@@ -23,11 +23,7 @@ public class Carload {
     private int number_sits;
     private String class_type;
 
-    public Carload(int id_train, int number_sits, String class_type) {
-        this.id_train = id_train;
-        this.number_sits = number_sits;
-        this.class_type = class_type;
-    }
+
 
     public Long getId_carload() {
         return id_carload;

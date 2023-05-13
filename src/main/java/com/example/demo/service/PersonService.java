@@ -1,11 +1,13 @@
 package com.example.demo.service;
 
 
+import com.example.demo.model.Carload;
 import com.example.demo.model.Person;
 import com.example.demo.model.Train;
 import com.example.demo.observer.NewTrainInformation;
 import com.example.demo.observer.TrainNews;
 import com.example.demo.repository.PersonRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +46,22 @@ public class PersonService implements NewTrainInformation{
         String password = person.getPassword();
 
         return personRepository.save(person);
+    }
+    public Person findById(Long id_person){
+        Optional<Person> optionalPerson = personRepository.findById(id_person);
+        if(optionalPerson.isPresent()){
+            return optionalPerson.get();
+        }else {
+            throw new EntityNotFoundException("ticket with id "+id_person+ "not found");
+        }
+    }
+    public void deleteById(Long id_person){
+        Optional<Person> optionalPerson = personRepository.findById(id_person);
+        if(optionalPerson.isPresent()){
+            personRepository.deleteById(id_person);
+        }else {
+            throw new EntityNotFoundException("train with id "+id_person+"not found");
+        }
     }
     @Override
     public void update(String news) {

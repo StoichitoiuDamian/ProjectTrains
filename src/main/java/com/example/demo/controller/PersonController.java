@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.model.Carload;
 import com.example.demo.model.Person;
 import com.example.demo.model.Train;
 import com.example.demo.observer.TrainNews;
 import com.example.demo.service.PersonService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,5 +52,26 @@ public class PersonController {
     @GetMapping("/getNews")
     public void getNews(String news){
         personService.update(news);
+    }
+    @GetMapping("/findPerson{id}")
+    public Person findById(@PathVariable Long id){
+        Person t1 = new Person();
+
+        try{
+            t1 = personService.findById(id);
+        }
+        catch (EntityNotFoundException e2){
+            System.out.println("Entity not found");
+        }
+        catch (Exception e){
+            t1 = null;
+            System.out.println("Exception found");
+        }
+
+        return t1;
+    }
+    @DeleteMapping("/deletePerson{id}")
+    public void deleteById(@PathVariable Long id){
+        personService.deleteById(id);
     }
 }
