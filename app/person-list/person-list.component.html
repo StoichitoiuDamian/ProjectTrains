@@ -1,0 +1,23 @@
+<h2>Persoane</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Person id </th>
+            <th> Username </th>
+            <th> Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of persons">
+            <td>{{person.id_person}}</td>
+            <td>{{person.username}}</td>
+            <td>{{person.password}}</td>
+            <td>
+                <button (click)="updatePerson(person.id_person)" class = "btn btn-info">Update</button>
+            </td>
+            <td>
+                <button (click)="deletePerson(person.id_person)" class = "btn btn-danger"style="margin-left : 2px">Delete</button>
+            </td>
+      </tr>
+    </tbody>
+</table>

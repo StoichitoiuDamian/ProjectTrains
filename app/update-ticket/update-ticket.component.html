@@ -1,0 +1,55 @@
+<div class = "col-md-4 offset-md-4">
+
+    <h3>Update Ticket</h3>
+    <form (ngSubmit) ="onSubmit()">
+    
+        <div class="form-group">
+            <label>hour</label>
+            <input type="text" class ="form-control" id = "hour"
+                [(ngModel)] = "ticket.hour" name = "hour">
+        </div>
+        <div class="form-group">
+            <label> day </label>
+            <input type="text" class ="form-control" id = "day"
+                [(ngModel)] = "ticket.day" name = "day">
+        </div>
+        <div class="form-group">
+            <label> month</label>
+            <input type="text" class ="form-control" id = "month"
+                [(ngModel)] = "ticket.month" name = "month">
+        </div>
+        <div class="form-group">
+            <label> price </label>
+            <input type="text" class ="form-control" id = "price"
+                [(ngModel)] = "ticket.price" name = "price">
+        </div>
+        <div class="form-group">
+            <label> id train </label>
+            <input type="text" class ="form-control" id = "id_train"
+                [(ngModel)] = "ticket.id_train" name = "id_train">
+        </div>
+        <div class="form-group">
+            <label> class type </label>
+            <input type="text" class ="form-control" id = "class_type"
+                [(ngModel)] = "ticket.class_type" name = "class_type">
+        </div>
+        <div class="form-group">
+            <label> sit number </label>
+            <input type="text" class ="form-control" id = "sit_number"
+                [(ngModel)] = "ticket.sit_number" name = "sit_number">
+        </div>
+        <div class="form-group">
+            <label> id tour </label>
+            <input type="text" class ="form-control" id = "id_tour"
+                [(ngModel)] = "ticket.id_tour" name = "id_tour">
+        </div>
+        <div class="form-group">
+            <label> id person </label>
+            <input type="text" class ="form-control" id = "id_person"
+                [(ngModel)] = "ticket.id_person" name = "id_person">
+        </div>
+    
+        <button class = "btn btn-success" type = "submit">CREATE</button>
+    </form>    
+    </div>
+

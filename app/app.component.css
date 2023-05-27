@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #007bff;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 10px;
+  }
+  
+  .nav-link {
+    color: #fff;
+  }
+  
+  .nav-link:hover {
+    color: #fff;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }

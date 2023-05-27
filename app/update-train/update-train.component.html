@@ -1,0 +1,18 @@
+<div class="col-md-4 offset-md-4">
+    <h3>Update Train</h3>
+    <form (ngSubmit)="onSubmit()" class="update-train-form">
+        <div class="form-group">
+            <label for="train_name">Train name</label>
+            <input type="text" class="form-control" id="train_name" [(ngModel)]="train.train_name" name="train_name">
+        </div>
+        <div class="form-group">
+            <label for="train_type">Train type</label>
+            <input type="text" class="form-control" id="train_type" [(ngModel)]="train.train_type" name="train_type">
+        </div>
+        <div class="form-group">
+            <label for="id_tour">Id tour</label>
+            <input type="text" class="form-control" id="id_tour" [(ngModel)]="train.id_tour" name="id_tour">
+        </div>
+        <button class="btn btn-success" type="submit">CREATE</button>
+    </form>
+</div>

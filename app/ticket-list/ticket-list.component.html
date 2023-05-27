@@ -1,0 +1,39 @@
+<h2>Bilete</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> id ticket </th>
+            <th> hour </th>
+            <th> day </th>
+            <th> month</th>
+            <th> price </th>
+            <th> id train </th>
+            <th> class type</th>
+            <th> sit number</th>
+            <th> id tour </th>
+            <th> id person</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticket of tickets">
+            <td>{{ticket.id_ticket}}</td>
+            <td>{{ticket.hour}}</td>
+            <td>{{ticket.day}}</td>
+            <td>{{ticket.month}}</td>
+            <td>{{ticket.price}}</td>
+            <td>{{ticket.id_train}}</td>
+            <td>{{ticket.class_type}}</td>
+            <td>{{ticket.sit_number}}</td>
+            <td>{{ticket.id_tour}}</td>
+            <td>{{ticket.id_person}}</td>
+           
+            <td>
+                <button (click)="updateTicket(ticket.id_ticket)" class = "btn btn-info">Update</button>
+            </td>
+            <td>
+                <button (click)="deleteTicket(ticket.id_ticket)" class = "btn btn-danger"style="margin-left : 2px">Delete</button>
+            </td>
+      </tr>
+    </tbody>
+</table>

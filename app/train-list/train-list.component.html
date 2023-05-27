@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trenurile din Gara</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        body {
+            background-image: url('/images/velaro.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #000000;
+        }
+
+        th {
+            background-color: #453ccc;
+        }
+
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-info {
+            background-color: #337ab7;
+            color: #fff;
+        }
+
+        .btn-danger {
+            background-color: #d9534f;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background-color: #c9302c;
+        }
+
+        .btn-info:hover {
+            background-color: #286090;
+        }
+        body {
+             background-image: url('assets/images/velaro.jpg');
+        }
+    </style>
+   
+</head>
+<body>
+    <h2>Trenurile din Gara</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Train id</th>
+                <th>Train name</th>
+                <th>Train type</th>
+                <th>Tour id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let train of trains">
+                <td>{{train.id_train}}</td>
+                <td>{{train.train_name}}</td>
+                <td>{{train.train_type}}</td>
+                <td>{{train.id_tour}}</td>
+                <td>
+                    <button (click)="updateTrain(train.id_train)" class="btn btn-info">Update</button>
+                </td>
+                <td>
+                    <button (click)="deleteTrain(train.id_train)" class="btn btn-danger" style="margin-left: 2px">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

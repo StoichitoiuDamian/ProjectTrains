@@ -1,0 +1,19 @@
+
+<div class = "col-md-4 offset-md-4">
+
+    <h3>Create Person</h3>
+    <form (ngSubmit) ="onSubmit()">
+    
+        <div class="form-group">
+            <label> Username</label>
+            <input type="text" class ="form-control" id = "username"
+                [(ngModel)] = "person.username" name = "username">
+        </div>
+        <div class="form-group">
+            <label> password</label>
+            <input type="text" class ="form-control" id = "password"
+                [(ngModel)] = "person.password" name = "password">
+        </div>
+        <button class = "btn btn-success" type = "submit">CREATE</button>
+    </form>    
+    </div>

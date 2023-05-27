@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class = "navbar-nav">
+        <li class = "nav-item">
+            <a routerLink="Login" routerLinkActive="active" class="nav-link" >Login</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="getTrain" routerLinkActive="active" class="nav-link" >showTrain</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="createTrain" routerLinkActive="active" class="nav-link" >addTrain</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="getTicket" routerLinkActive="active" class="nav-link" >showTicket</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="addTicket" routerLinkActive="active" class="nav-link" >addTicket</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="showPerson" routerLinkActive="active" class="nav-link" >showPerson</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="addPerson" routerLinkActive="active" class="nav-link" >addPerson</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="showTour" routerLinkActive="active" class="nav-link" >showTour</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="addTour" routerLinkActive="active" class="nav-link" >addTour</a>
+        </li>
+    </ul>
+</nav>
+
+<h1 class="text-center"> {{title}} </h1>
+<div class = "container">
+    <router-outlet></router-outlet>
+</div>

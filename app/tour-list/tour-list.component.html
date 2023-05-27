@@ -1,0 +1,33 @@
+<h2>Lista tur-retur</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> id Tour </th>
+            <th> hour </th>
+            <th> day </th>
+            <th> month</th>
+            <th> start </th>
+            <th> stop </th>
+            <th> id_train</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tour of tours">
+            <td>{{tour.id_tour}}</td>
+            <td>{{tour.hour}}</td>
+            <td>{{tour.day}}</td>
+            <td>{{tour.month}}</td>
+            <td>{{tour.start}}</td>
+            <td>{{tour.stop}}</td>
+            <td>{{tour.id_train}}</td>
+           
+            <td>
+                <button (click)="updateTour(tour.id_tour)" class = "btn btn-info">Update</button>
+            </td>
+            <td>
+                <button (click)="deleteTour(tour.id_tour)" class = "btn btn-danger"style="margin-left : 2px">Delete</button>
+            </td>
+      </tr>
+    </tbody>
+</table>
