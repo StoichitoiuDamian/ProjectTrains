@@ -35,5 +35,18 @@ testFindById():Această metodă de testare verifică funcția findById(Long id) 
 - Se va putea alege clasa la care sa calatoresti
 - Se va putea alege scaunul pe care sa calatoresti
 
+## FRONTEND
+ Pentru a realiza frontend-ul meu am avut nevoie de a invata un nou frakework si anume Angular care este un cadru (framework) de dezvoltare web utilizat pentru construirea aplicațiilor web dinamice și complexe. Este dezvoltat și susținut de către Google și oferă un set de instrumente și funcționalități pentru a facilita dezvoltarea aplicațiilor web cu interfață utilizator modernă și reactivă.
+ 
+ In aceasta aplicatie web am realizat comunicarea intre Backend si FrontEnd pentru a transmite datele,si afisarea acestora pe o pagina web.Principalele date pe care le-am trimis eu fost cele de la endpoint-uri de exemplu pentru clasa train am realizat comunicarea prin intermediul link-urilor create in backend si anume :
+- /train care imi afiseaza toate trenurile 
+- /createTrain care ma ajuta la crearea unui nou tren
+- /findTrain care ma ajuta la gasirea unui tren dupa id
+- /putTrain care ma ajuta la a face update la datele unui tren
+- /deleteTrain pentru a sterge un tren
+
+Avem capacitatea de a face serviciul de login insa doar pentru persoanele din baza de date,am ajustat paginile astfel incat sa putem regasi cateva butoane ajutatoare pentru update si delete,avem capacitatea de a se naviga intre pagini,modificarea datelor in timp real,stilizarea paginilor astfel incat sa arate cat mai frumos.
+
+ 
 ## Diagrama bazei de date 
 https://photos.google.com/photo/AF1QipMLdARsYrYSUnUbEmqW4Ib596aX8MyfEsQgrmEh
